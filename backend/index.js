@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
+const mongoose = require("mongoose");
 const connection = require('./config/db');
 const userRoute = require('./routes/user.routes');
 const carRoute = require('./routes/cars.routes');
@@ -25,7 +26,7 @@ app.get('/', async(req , res)=>{
 app.listen(8080 , async()=>{
     try {
         await connection();
-        console.log('listening on http://localhost:8080')
+        console.log(`App listening on ${process.env.PORT}`)
     } catch (error) {
         console.log(error)
     }
