@@ -18,7 +18,7 @@ app.use('/oem',OemRouter)
 
 
 app.get('/', async(req , res)=>{
-    res.send('Welcome ')
+    res.send('Welcome to Server')
 })
 
 
